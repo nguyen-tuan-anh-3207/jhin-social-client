@@ -118,9 +118,16 @@ export default function PrimarySearchAppBar() {
       <AppBar position='static'>
         <Toolbar>
           <HeaderLeft />
-          <Box sx={{ flexGrow: 1 }} />
-          <HeaderNav />
-          <Box sx={{ flexGrow: 1 }} />
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: 'flex',
+              justifyContent: 'space-around'
+            }}
+          >
+            <HeaderNav />
+          </Box>
+
           <HeaderRight
             menuId={menuId}
             handleProfileMenuOpen={handleProfileMenuOpen}

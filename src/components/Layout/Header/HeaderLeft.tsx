@@ -1,13 +1,13 @@
-import React from 'react'
-import IconButton from '@mui/material/IconButton'
-import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
-import { styled, alpha } from '@mui/material/styles'
+import IconButton from '@mui/material/IconButton'
 import InputBase from '@mui/material/InputBase'
+import { alpha, styled } from '@mui/material/styles'
+import ImageAvatars from 'components/Avatar'
+import React from 'react'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
-  borderRadius: theme.shape.borderRadius,
+  borderRadius: 20,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25)
@@ -57,14 +57,17 @@ const HeaderLeft = (props: Props) => {
         aria-label='open drawer'
         sx={{ mr: 2 }}
       >
-        <MenuIcon />
+        <ImageAvatars
+          name='jhin'
+          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRNOeCWSLEpkkpOmPGFbaS6Mz44chZQiOkDg&usqp=CAU'
+        />
       </IconButton>
       <Search>
         <SearchIconWrapper>
           <SearchIcon />
         </SearchIconWrapper>
         <StyledInputBase
-          placeholder='Search…'
+          placeholder='Start typing to search....'
           inputProps={{ 'aria-label': 'search' }}
         />
       </Search>

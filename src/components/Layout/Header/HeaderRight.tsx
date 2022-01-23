@@ -1,10 +1,10 @@
+import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined'
+import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined'
 import { Box, IconButton } from '@mui/material'
-import React from 'react'
-import MailIcon from '@mui/icons-material/Mail'
 import Badge from '@mui/material/Badge'
-import AccountCircle from '@mui/icons-material/AccountCircle'
-import NotificationsIcon from '@mui/icons-material/Notifications'
+import ImageAvatars from 'components/Avatar'
 import ThemeToggle from 'components/ThemeToggle'
+import React from 'react'
 
 type Props = {
   menuId: string
@@ -16,18 +16,18 @@ const HeaderRight = ({ menuId, handleProfileMenuOpen }: Props) => {
     <>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
         <ThemeToggle />
-        <IconButton size='large' aria-label='show 4 new mails' color='inherit'>
-          <Badge badgeContent={4} color='error'>
-            <MailIcon />
-          </Badge>
-        </IconButton>
         <IconButton
           size='large'
           aria-label='show 17 new notifications'
           color='inherit'
         >
           <Badge badgeContent={17} color='error'>
-            <NotificationsIcon />
+            <NotificationsOutlinedIcon />
+          </Badge>
+        </IconButton>
+        <IconButton size='large' aria-label='show 4 new mails' color='inherit'>
+          <Badge badgeContent={4} color='error'>
+            <ChatBubbleOutlineOutlinedIcon />
           </Badge>
         </IconButton>
         <IconButton
@@ -39,7 +39,10 @@ const HeaderRight = ({ menuId, handleProfileMenuOpen }: Props) => {
           onClick={handleProfileMenuOpen}
           color='inherit'
         >
-          <AccountCircle />
+          <ImageAvatars
+            name='anh'
+            src='https://cdna.artstation.com/p/assets/images/images/021/944/344/large/z_-infinity-.jpg?1573538424'
+          />
         </IconButton>
       </Box>
     </>
