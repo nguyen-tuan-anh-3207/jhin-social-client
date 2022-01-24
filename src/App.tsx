@@ -34,6 +34,7 @@ export default function App() {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
+        {/*  fake loading */}
         <React.Suspense fallback={<div>Loading..</div>}>
           <BrowserRouter>
             <Frontend />
