@@ -2,6 +2,9 @@ import { CssBaseline } from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import Header from 'components/Layout/Header'
 import * as React from 'react'
+import HomePage from 'features/home/HomePage'
+import { BrowserRouter } from 'react-router-dom'
+import Frontend from 'areas/Frontend'
 
 export const ColorModeContext = React.createContext({
   toggleColorMode: () => {}
@@ -31,7 +34,12 @@ export default function App() {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-        <Header />
+        <React.Suspense fallback={<div>Loading..</div>}>
+          <BrowserRouter>
+            <Frontend />
+          </BrowserRouter>
+        </React.Suspense>
+
         <CssBaseline />
       </ThemeProvider>
     </ColorModeContext.Provider>

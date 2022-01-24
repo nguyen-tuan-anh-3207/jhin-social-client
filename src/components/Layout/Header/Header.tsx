@@ -8,8 +8,10 @@ import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
+import { styled } from '@mui/material/styles'
 import Toolbar from '@mui/material/Toolbar'
 import * as React from 'react'
+// components
 import HeaderLeft from './HeaderLeft'
 import HeaderNav from './HeaderNav'
 import HeaderRight from './HeaderRight'
@@ -60,6 +62,7 @@ export default function PrimarySearchAppBar() {
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   )
+  const Offset = styled('div')(({ theme }) => theme.mixins.toolbar)
 
   const mobileMenuId = 'primary-search-account-menu-mobile'
   const renderMobileMenu = (
@@ -115,7 +118,7 @@ export default function PrimarySearchAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position='static'>
+      <AppBar position='fixed'>
         <Toolbar>
           <HeaderLeft />
           <Box
@@ -147,6 +150,7 @@ export default function PrimarySearchAppBar() {
           </Box>
         </Toolbar>
       </AppBar>
+      <Offset />
       {renderMobileMenu}
       {renderMenu}
     </Box>
