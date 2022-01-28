@@ -7,6 +7,7 @@ import Story from 'components/Story'
 import Style from './Style'
 import Status from 'components/Status'
 import Post from 'components/Post'
+import RightBar from 'components/RightBar'
 
 type Props = {}
 
@@ -15,10 +16,10 @@ const HomePage = (props: Props) => {
 
   return (
     <Grid container spacing={1}>
-      <Grid item xs={3}>
+      <Grid item xs={2.7}>
         <Sidebar />
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={6.6}>
         <div className={classes.feed__stories}>
           <Story />
         </div>
@@ -28,8 +29,8 @@ const HomePage = (props: Props) => {
         <Post />
         <Post />
       </Grid>
-      <Grid item xs={3}>
-        xs=4
+      <Grid item xs={2.7}>
+        <RightBar />
       </Grid>
     </Grid>
   )

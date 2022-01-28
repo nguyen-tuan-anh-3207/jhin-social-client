@@ -1,7 +1,7 @@
 import { Avatar } from '@mui/material'
 import CardItem from 'components/CardItem'
 import React from 'react'
-import SidebarItem from './SidebarItem'
+import SidebarList from './SidebarList'
 import DynamicFeedIcon from '@mui/icons-material/DynamicFeed'
 import LiveTvIcon from '@mui/icons-material/LiveTv'
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt'
@@ -9,7 +9,7 @@ import GroupsIcon from '@mui/icons-material/Groups'
 import VideogameAssetIcon from '@mui/icons-material/VideogameAsset'
 import SettingsIcon from '@mui/icons-material/Settings'
 import ChatIcon from '@mui/icons-material/Chat'
-
+import globalStyle from 'globalStyle'
 type Props = {}
 
 const newFeedList = [
@@ -54,18 +54,19 @@ const accountList = [
 ]
 
 const Sidebar = (props: Props) => {
+  const classes = globalStyle()
   return (
-    <>
+    <div className={classes.grid__scroll}>
       <CardItem>
-        <SidebarItem list={newFeedList} isMore={true} />
+        <SidebarList list={newFeedList} isMore={true} />
       </CardItem>
       <CardItem>
-        <SidebarItem title='More Pages' list={morePageList} />
+        <SidebarList title='More Pages' list={morePageList} />
       </CardItem>
       <CardItem>
-        <SidebarItem title='Account' list={accountList} />
+        <SidebarList title='Account' list={accountList} />
       </CardItem>
-    </>
+    </div>
   )
 }
 

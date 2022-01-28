@@ -25,7 +25,7 @@ type Props = {
   list: ContentSidebar[]
 }
 
-export default function SidebarItem({ title, list, isMore }: Props) {
+export default function SidebarList({ title, list, isMore }: Props) {
   const [open, setOpen] = React.useState(false)
 
   const handleClick = () => {
