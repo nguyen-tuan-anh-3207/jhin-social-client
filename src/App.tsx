@@ -1,10 +1,9 @@
 import { CssBaseline } from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-import Header from 'components/Layout/Header'
-import * as React from 'react'
-import HomePage from 'features/home/HomePage'
-import { BrowserRouter } from 'react-router-dom'
 import Frontend from 'areas/Frontend'
+import LoadingPage from 'components/LoadingPage'
+import * as React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
 export const ColorModeContext = React.createContext({
   toggleColorMode: () => {}
@@ -34,13 +33,11 @@ export default function App() {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-        {/*  fake loading */}
-        <React.Suspense fallback={<div>Loading..</div>}>
+        <React.Suspense fallback={<LoadingPage />}>
           <BrowserRouter>
             <Frontend />
           </BrowserRouter>
         </React.Suspense>
-
         <CssBaseline />
       </ThemeProvider>
     </ColorModeContext.Provider>

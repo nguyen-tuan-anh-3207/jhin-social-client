@@ -34,7 +34,7 @@ export default makeStyles((theme: any) => ({
   // },
 
   feed__stories: {
-    width: '85%',
+    width: '100%',
     [theme.breakpoints.down('md')]: {
       width: '90%'
     },
