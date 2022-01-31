@@ -14,8 +14,6 @@ const Stories = () => {
       const response = await axios.get(
         'https://breakingbadapi.com/api/characters?limit=10'
       )
-
-      console.log(response.data.length)
       setUsers(response.data)
     }
     fetchUser()

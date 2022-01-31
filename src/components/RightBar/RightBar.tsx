@@ -10,6 +10,7 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import ChatIcon from '@mui/icons-material/Chat'
 import globalStyle from 'globalStyle'
 import FriendRequestItem from 'components/FriendRequestItem'
+import ChatRightBar from 'features/home/ChatRightBar'
 type Props = {}
 
 export type RequestList = {
@@ -28,17 +29,6 @@ const friendRequestList: RequestList[] = [
   }
 ]
 
-const friendOnlineList = [
-  {
-    avatar: '',
-    name: 'Lucian Cowboy'
-  },
-  {
-    avatar: '',
-    name: 'Senna Cowboy'
-  }
-]
-
 const RightBar = (props: Props) => {
   const classes = globalStyle()
   return (
@@ -46,7 +36,9 @@ const RightBar = (props: Props) => {
       <CardItem>
         <FriendRequestItem listRequest={friendRequestList} />
       </CardItem>
-      <CardItem>{/* <FriendRequestItem /> */}</CardItem>
+      <CardItem>
+        <ChatRightBar />
+      </CardItem>
     </div>
   )
 }
