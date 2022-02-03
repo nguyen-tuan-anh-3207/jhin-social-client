@@ -15,41 +15,49 @@ type Props = {}
 const newFeedList = [
   {
     icon: <Avatar />,
-    content: 'Nguyễn Tuấn Anh'
+    content: 'Nguyễn Tuấn Anh',
+    path: '/profile'
   },
   {
     icon: <DynamicFeedIcon />,
-    content: 'Feeds'
+    content: 'Feeds',
+    path: '/feed'
   },
   {
     icon: <PeopleAltIcon />,
-    content: 'Friends'
+    content: 'Friends',
+    path: '/friend'
   },
   {
     icon: <GroupsIcon />,
-    content: 'Groups'
+    content: 'Groups',
+    path: '/group'
   }
 ]
 
 const morePageList = [
   {
     icon: <LiveTvIcon />,
-    content: 'Live Stream'
+    content: 'Live Stream',
+    path: '/live-stream'
   },
   {
     icon: <VideogameAssetIcon />,
-    content: 'Games'
+    content: 'Games',
+    path: '/game'
   }
 ]
 
 const accountList = [
   {
     icon: <SettingsIcon />,
-    content: 'Settings'
+    content: 'Settings',
+    path: '/setting'
   },
   {
     icon: <ChatIcon />,
-    content: 'Chat'
+    content: 'Chat',
+    path: '/chat'
   }
 ]
 
@@ -58,7 +66,7 @@ const Sidebar = (props: Props) => {
   return (
     <div className={classes.grid__scroll}>
       <CardItem>
-        <SidebarList list={newFeedList} isMore={true} />
+        <SidebarList list={newFeedList} />
       </CardItem>
       <CardItem>
         <SidebarList title='More Pages' list={morePageList} />

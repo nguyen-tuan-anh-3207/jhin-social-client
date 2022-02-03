@@ -1,31 +1,28 @@
-import * as React from 'react'
-import ListSubheader from '@mui/material/ListSubheader'
+import ExpandLess from '@mui/icons-material/ExpandLess'
+import ExpandMore from '@mui/icons-material/ExpandMore'
+import ReadMoreIcon from '@mui/icons-material/ReadMore'
+import StarBorder from '@mui/icons-material/StarBorder'
+import Collapse from '@mui/material/Collapse'
 import List from '@mui/material/List'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import Collapse from '@mui/material/Collapse'
-import InboxIcon from '@mui/icons-material/MoveToInbox'
-import DraftsIcon from '@mui/icons-material/Drafts'
-import SendIcon from '@mui/icons-material/Send'
-import ExpandLess from '@mui/icons-material/ExpandLess'
-import ExpandMore from '@mui/icons-material/ExpandMore'
-import StarBorder from '@mui/icons-material/StarBorder'
-import ReadMoreIcon from '@mui/icons-material/ReadMore'
-import { boolean } from 'yup'
+import ListSubheader from '@mui/material/ListSubheader'
+import * as React from 'react'
+import { Link } from 'react-router-dom'
 
 type ContentSidebar = {
   icon: React.ReactNode
   content: string
+  path: string
 }
 
 type Props = {
   title?: string
-  isMore?: boolean
   list: ContentSidebar[]
 }
 
-export default function SidebarList({ title, list, isMore }: Props) {
+export default function SidebarList({ title, list }: Props) {
   const [open, setOpen] = React.useState(false)
 
   const handleClick = () => {
@@ -44,33 +41,16 @@ export default function SidebarList({ title, list, isMore }: Props) {
       }
     >
       {list.map((listItem: ContentSidebar) => (
-        <ListItemButton>
-          <ListItemIcon>{listItem.icon}</ListItemIcon>
-          <ListItemText primary={listItem.content} />
-        </ListItemButton>
-      ))}
-
-      {isMore ? (
-        <>
-          <ListItemButton onClick={handleClick}>
-            <ListItemIcon>
-              <ReadMoreIcon />
-            </ListItemIcon>
-            <ListItemText primary='Mores' />
-            {open ? <ExpandLess /> : <ExpandMore />}
+        <Link
+          to={listItem.path}
+          style={{ textDecoration: 'none', color: 'inherit' }}
+        >
+          <ListItemButton>
+            <ListItemIcon>{listItem.icon}</ListItemIcon>
+            <ListItemText primary={listItem.content} />
           </ListItemButton>
-          <Collapse in={open} timeout='auto' unmountOnExit>
-            <List component='div' disablePadding>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>
-                  <StarBorder />
-                </ListItemIcon>
-                <ListItemText primary='Starred' />
-              </ListItemButton>
-            </List>
-          </Collapse>
-        </>
-      ) : null}
+        </Link>
+      ))}
     </List>
   )
 }

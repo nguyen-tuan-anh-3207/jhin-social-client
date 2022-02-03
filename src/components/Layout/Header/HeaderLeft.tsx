@@ -4,6 +4,7 @@ import InputBase from '@mui/material/InputBase'
 import { alpha, styled } from '@mui/material/styles'
 import ImageAvatars from 'components/Avatar'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -50,18 +51,20 @@ type Props = {}
 const HeaderLeft = (props: Props) => {
   return (
     <>
-      <IconButton
-        size='large'
-        edge='start'
-        color='inherit'
-        aria-label='open drawer'
-        sx={{ mr: 2 }}
-      >
-        <ImageAvatars
-          name='jhin'
-          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRNOeCWSLEpkkpOmPGFbaS6Mz44chZQiOkDg&usqp=CAU'
-        />
-      </IconButton>
+      <Link to='/'>
+        <IconButton
+          size='large'
+          edge='start'
+          aria-label='open drawer'
+          sx={{ mr: 2 }}
+        >
+          <ImageAvatars
+            name='jhin'
+            src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRNOeCWSLEpkkpOmPGFbaS6Mz44chZQiOkDg&usqp=CAU'
+          />
+        </IconButton>
+      </Link>
+
       <Search>
         <SearchIconWrapper>
           <SearchIcon />
