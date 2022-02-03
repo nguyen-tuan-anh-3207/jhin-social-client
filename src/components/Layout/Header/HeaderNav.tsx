@@ -5,12 +5,11 @@ import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined
 import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined'
 import { Badge, IconButton } from '@mui/material'
 import React from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
 const HeaderNav = (props: Props) => {
-  const history = useHistory()
   return (
     <>
       <Link to='/'>
