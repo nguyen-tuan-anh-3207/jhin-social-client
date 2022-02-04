@@ -20,8 +20,8 @@ const newFeedList = [
   },
   {
     icon: <DynamicFeedIcon />,
-    content: 'Feeds',
-    path: '/feed'
+    content: 'Stories',
+    path: '/story'
   },
   {
     icon: <PeopleAltIcon />,

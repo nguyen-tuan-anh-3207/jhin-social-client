@@ -1,4 +1,5 @@
 import { Grid } from '@mui/material'
+import CardItem from 'components/CardItem'
 import React from 'react'
 import Sidebar from './Sidebar'
 
@@ -14,7 +15,7 @@ const BasicLayout = (props: Props) => {
         <Sidebar />
       </Grid>
       <Grid item xs={9.3}>
-        {children}
+        <CardItem>{children}</CardItem>
       </Grid>
     </Grid>
   )

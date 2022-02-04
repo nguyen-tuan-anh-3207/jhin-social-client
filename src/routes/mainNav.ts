@@ -1,6 +1,6 @@
 import { homePageNav, homePageRoutes } from 'features/home/nav'
 import { chatNav, chatRoutes } from 'features/chat/nav'
-import { feedNav, feedRoutes } from 'features/feed/nav'
+import { storyNav, storyRoutes } from 'features/story/nav'
 import { profileNav, profileRoutes } from 'features/profile/nav'
 import {
   friendRequestNav,
@@ -13,7 +13,7 @@ export const mainNav = [
   ...gameNav,
   ...settingNav,
   ...profileNav,
-  ...feedNav,
+  ...storyNav,
   ...friendRequestNav,
   ...chatNav,
   ...homePageNav
@@ -23,7 +23,7 @@ export const routes = {
   ...gameRoutes,
   ...settingRoutes,
   ...profileRoutes,
-  ...feedRoutes,
+  ...storyRoutes,
   ...friendRequestRoutes,
   ...chatRoutes,
   ...homePageRoutes

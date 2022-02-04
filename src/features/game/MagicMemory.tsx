@@ -78,31 +78,29 @@ const MagicMemory = (props: Props) => {
 
   return (
     <BasicLayout>
-      <CardItem>
-        <div className={classes.root}>
-          <h1>Magic Match</h1>
-          <button className={classes.hover} onClick={getShuffleCards}>
-            New Game
-          </button>
-          <Container>
-            <Grid container>
-              {cards.map((card) => (
-                <SingleCard
-                  card={card}
-                  key={card.id}
-                  handleChoice={handleChoice}
-                  disabled={disabled}
-                  flipped={
-                    card === choiceOne || card === choiceTwo || card.matched
-                  }
-                />
-              ))}
-            </Grid>
-          </Container>
+      <div className={classes.root}>
+        <h1>Magic Match</h1>
+        <button className={classes.hover} onClick={getShuffleCards}>
+          New Game
+        </button>
+        <Container>
+          <Grid container>
+            {cards.map((card) => (
+              <SingleCard
+                card={card}
+                key={card.id}
+                handleChoice={handleChoice}
+                disabled={disabled}
+                flipped={
+                  card === choiceOne || card === choiceTwo || card.matched
+                }
+              />
+            ))}
+          </Grid>
+        </Container>
 
-          <p>Turns: {turn}</p>
-        </div>
-      </CardItem>
+        <p>Turns: {turn}</p>
+      </div>
     </BasicLayout>
   )
 }

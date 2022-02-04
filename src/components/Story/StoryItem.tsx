@@ -1,5 +1,6 @@
-import { Avatar } from '@mui/material'
-import React from 'react'
+import { Avatar, Modal } from '@mui/material'
+import { Box } from '@mui/system'
+import React, { useState } from 'react'
 import Style from './Style'
 
 type Props = {
@@ -10,14 +11,32 @@ type Props = {
 
 function Story({ profileImage, bgImage, title }: Props) {
   const classes = Style()
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
   return (
-    <div
-      className={classes.story}
-      style={{ backgroundImage: `url(${bgImage})` }}
-    >
-      <Avatar src={profileImage} className={classes.profilePic} />
-      <h4>{title}</h4>
-    </div>
+    <>
+      <div
+        onClick={handleOpen}
+        className={classes.story}
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
+        <Avatar src={profileImage} className={classes.profilePic} />
+        <h4>{title}</h4>
+      </div>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby='modal-modal-title'
+        aria-describedby='modal-modal-description'
+      >
+        <div
+          className={classes.storyModal}
+          style={{ backgroundImage: `url(${bgImage})` }}
+        ></div>
+      </Modal>
+    </>
   )
 }
 
