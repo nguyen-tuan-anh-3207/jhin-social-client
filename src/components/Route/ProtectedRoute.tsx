@@ -10,7 +10,7 @@ const ProtectedRoute = ({ component: Component, isAuth, ...rest }: any) => {
       component={(matchProps: any) => <Component {...matchProps} />}
     />
   ) : (
-    <Redirect to='/' />
+    <Redirect to='/login' />
   )
 }
 export default ProtectedRoute

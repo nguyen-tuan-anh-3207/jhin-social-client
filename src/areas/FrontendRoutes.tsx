@@ -15,7 +15,7 @@ const FrontEndRoutes = (props: any) => {
   // const user = useGetUser()
 
   // const isAuth = !!(user || getCookie(AUTH_USER))
-  const isAuth = true
+  const isAuth = false
 
   const generateFrontEndRoute = (data: NavigatorParams, index: number): any => {
     if (!data) {

@@ -8,6 +8,11 @@ import {
 } from 'features/friendRequest/nav'
 import { settingNav, settingRoutes } from 'features/setting/nav'
 import { gameNav, gameRoutes } from 'features/game/nav'
+import { loginNav, loginRoutes } from 'features/authentication/login/nav'
+import {
+  registerNav,
+  registerRoutes
+} from 'features/authentication/register/nav'
 
 export const mainNav = [
   ...gameNav,
@@ -16,6 +21,8 @@ export const mainNav = [
   ...storyNav,
   ...friendRequestNav,
   ...chatNav,
+  ...loginNav,
+  ...registerNav,
   ...homePageNav
 ]
 
@@ -26,5 +33,7 @@ export const routes = {
   ...storyRoutes,
   ...friendRequestRoutes,
   ...chatRoutes,
+  ...loginRoutes,
+  ...registerRoutes,
   ...homePageRoutes
 }

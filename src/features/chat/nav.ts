@@ -10,7 +10,7 @@ const nav: NavigatorParams[] = [
   {
     component: ChatPage,
     isMenu: false,
-    isProtected: false,
+    isProtected: true,
     path: '/chat'
   }
 ]

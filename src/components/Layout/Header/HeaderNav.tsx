@@ -20,7 +20,7 @@ const HeaderNav = (props: Props) => {
         </IconButton>
       </Link>
 
-      <Link to='/feed'>
+      <Link to='/story'>
         <IconButton size='large' aria-label='show 17 new notifications'>
           <Badge color='error'>
             <AutoAwesomeOutlinedIcon fontSize='large' />
