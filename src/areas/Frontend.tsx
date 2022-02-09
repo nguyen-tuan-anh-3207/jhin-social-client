@@ -5,9 +5,10 @@ import FrontEndRoutes from './FrontendRoutes'
 type Props = {}
 
 const Frontend = (props: Props) => {
+  const isLogin = false
   return (
     <>
-      <Header />
+      {isLogin && <Header />}
       <FrontEndRoutes />
     </>
   )
